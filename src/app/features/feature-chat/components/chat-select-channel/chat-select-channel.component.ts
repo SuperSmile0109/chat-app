@@ -3,7 +3,8 @@ import { Channel } from 'src/app/core/models';
 
 @Component({
   selector: 'chat-select-channel',
-  templateUrl: './chat-select-channel.component.html'
+  templateUrl: './chat-select-channel.component.html',
+  styleUrls:["./chat-select-channel.component.scss"]
 })
 export class ChatSelectChannelComponent implements OnInit {
 

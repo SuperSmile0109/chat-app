@@ -17,6 +17,7 @@ import {
 @Component({
   selector: 'chat-wrapper-textarea',
   templateUrl: './chat-wrapper-textarea.component.html',
+  styleUrls:["./chat-wrapper-textarea.component.scss"]
 })
 export class ChatWrapperTextareaComponent implements OnInit, OnChanges {
   messageForm!: FormGroup;

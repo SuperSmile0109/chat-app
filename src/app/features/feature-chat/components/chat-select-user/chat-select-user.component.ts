@@ -5,6 +5,7 @@ import { User } from 'src/app/core/models';
 @Component({
   selector: 'chat-select-user',
   templateUrl: './chat-select-user.component.html',
+  styleUrls:["./chat-select-user.component.scss"]
 })
 export class ChatSelectUserComponent implements OnInit {
   userForm!: FormGroup;

@@ -3,7 +3,8 @@ import { Channel } from 'src/app/core/models';
 
 @Component({
   selector: 'chat-wrapper-header',
-  templateUrl: './chat-wrapper-header.component.html'
+  templateUrl: './chat-wrapper-header.component.html',
+  styleUrls:["./chat-wrapper-header.component.scss"]
 })
 export class ChatWrapperHeaderComponent implements OnInit {
 
