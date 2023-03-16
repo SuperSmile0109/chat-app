@@ -1,8 +1,8 @@
 import { gql } from 'apollo-angular';
 
-export const LOAD_LATEST_MESSAGES = gql`
-  query ($channelId: String!) {
-    fetchLatestMessages(channelId: $channelId) {
+export const POST_MESSAGES = gql`
+  mutation ($channelId: String!, $text: String!, $userId: String!) {
+    postMessage(channelId: $channelId, text: $text, userId: $userId) {
       messageId
       userId
       text
@@ -10,15 +10,13 @@ export const LOAD_LATEST_MESSAGES = gql`
     }
   }
 `;
-
-export const LOAD_LATEST_MESSAGES_TEST = gql`
+export const LOAD_LATEST_MESSAGES = gql`
   query ($channelId: String!) {
     fetchLatestMessages(channelId: $channelId) {
       messageId
       userId
       text
       datetime
-      __typename
     }
   }
 `;
@@ -34,13 +32,3 @@ export const LOAD_MORE_MESSAGES = gql`
   }
 `;
 
-export const POST_MESSAGES = gql`
-  mutation ($channelId: String!, $text: String!, $userId: String!) {
-    postMessage(channelId: $channelId, text: $text, userId: $userId) {
-      messageId
-      userId
-      text
-      datetime
-    }
-  }
-`;
