@@ -1,0 +1,49 @@
+<div class="relative overflow-hidden">
+  <div class="relative mx-auto mt-2 w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col">
+      <section>
+        <h1 class="text-2xl font-semibold tracking-tight text-slate-800">1 day chat app</h1>
+        <h2>All messages will be deleted at every 00:00 UTC</h2>
+      </section>
+      <div class="h-[87vh] mx-auto bg-[#F4F5FB] w-full m-4 rounded-md relative overflow-hidden shadow-lg">
+        <div class="grid grid-cols-3 divide-x h-full">
+          <div class="p-1 md:p-4 lg:p-4">
+            <chat-select-user (selectedUser)="setSelectedUser($event)"></chat-select-user>
+            <chat-select-channel (selectedChannel)="setSelectedChannel($event)"></chat-select-channel>
+          </div>
+          <div class="col-span-2">
+            <div class="flex flex-col h-full">
+              <chat-wrapper-header [channel]="channel"></chat-wrapper-header>
+              <div class="px-4 py-2 h-full">
+                <div class="relative z-[1] h-full flex flex-col overflow-hidden">
+                  <!-- Read more old messages button - Display only if there are messages -->
+                  <div class="button-class" *ngIf="messages && messages.length > 0">
+                    <chat-readmore-button [old]="true"
+                      (readMoreMessage)="readMoreMessages($event)"></chat-readmore-button>
+                  </div>
+
+                  <!-- Messages view -->
+                  <div class="flex overflow-y-auto flex-col-reverse h-[calc(100vh-20rem)]">
+                    <chat-wrapper-messages [messages]="messages" [user]="user"></chat-wrapper-messages>
+                  </div>
+
+                  <!-- Read more new messages button - Display only if there are messages -->
+                  <div class="button-class" *ngIf="messages && messages.length > 0">
+                    <chat-readmore-button [old]="false"
+                      (readMoreMessage)="readMoreMessages($event)"></chat-readmore-button>
+                  </div>
+
+                  <!-- Textarea to fill and send a message -->
+                  <div class="absolute flex inset-x-0 bottom-0 items-end w-full">
+                    <chat-wrapper-textarea class="w-full" (userMessage)="postUserMessage($event)" [chatDetails]="chatDetails"
+                      class="w-full"></chat-wrapper-textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

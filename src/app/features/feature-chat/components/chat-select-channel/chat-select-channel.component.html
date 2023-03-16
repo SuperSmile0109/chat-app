@@ -1,0 +1,9 @@
+<div class="my-4">
+  <label class="block mb-2 text-sm font-medium text-gray-700">2. Choose your channel</label>
+  <div class="w-full text-sm font-medium text-gray-900">
+    <button type="button" *ngFor="let channel of channels" data-testid="channel-button" (click)="getSelectedChannel(channel)"
+      class="w-full px-4 py-4 font-medium text-left cursor-pointer hover:bg-gray-200 focus:outline-none" [ngClass]="channel.active ? 'bg-white' : ''">
+      {{ channel.channelValue }} Channel
+    </button>
+  </div>
+</div>
