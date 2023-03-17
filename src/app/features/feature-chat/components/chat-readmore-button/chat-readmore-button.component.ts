@@ -9,6 +9,7 @@ export class ChatReadmoreButtonComponent implements OnInit {
 
   @Input() old: boolean | undefined
   @Output() readMoreMessage = new EventEmitter();
+  @Output() moveScroll = new EventEmitter();
 
   constructor() { }
 
@@ -17,6 +18,7 @@ export class ChatReadmoreButtonComponent implements OnInit {
 
   readMoreMessages(old: boolean | undefined) {
     this.readMoreMessage.emit(old);
+    this.moveScroll.emit();
   }
 
 }

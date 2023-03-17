@@ -1,36 +1,36 @@
-<div class="flex flex-col flex-auto shrink py-6 bg-card">
+<div class="container">
   <div *ngFor="let message of messages">
-    <div class="flex flex-row items-start my-2" *ngIf="user.userId !== message.userId">
-      <div class="relative flex flex-0 flex-col items-center justify-center w-9 my-auto">
-        <img src="assets/img/{{message.userId}}.png" class="w-full h-full rounded-full object-cover" alt="">
+    <div class="receive" *ngIf="user.userId !== message.userId">
+      <div class="avatar">
+        <img src="assets/images/{{message.userId}}.png" alt="">
         <p class="text-xs">{{ message.userId }}</p>
       </div>
-      <div class="relative max-w-[70%] px-3 py-1 rounded-sm ml-4 bg-white text-gray-700 text-sm my-auto">
+      <div class="message">
         <p>{{ message.text }}</p>
-        <div class="absolute top-[0px] left-0 transform -translate-x-1/2 translate-y-1/2 rotate-45 w-4 h-4 bg-white">
+        <div>
         </div>
       </div>
-      <div class="relative my-auto mx-2 text-xs font-medium text-center">
+      <div class="datetime">
         <p>{{ message.datetime | date:'shortTime' }}</p>
       </div>
     </div>
-    <div class="flex flex-row-reverse items-end my-2" *ngIf="user.userId === message.userId">
-      <div class="relative flex flex-0 flex-col items-center justify-center w-9 my-auto">
-        <img src="assets/img/{{message.userId}}.png" class="w-full h-full rounded-full object-cover" alt="">
+    <div class="send" *ngIf="user.userId === message.userId">
+      <div class="avatar relative flex flex-0 flex-col items-center justify-center w-9 my-auto">
+        <img src="assets/images/{{message.userId}}.png" class="w-full h-full rounded-full object-cover" alt="">
         <p class="text-xs">{{ message.userId }}</p>
       </div>
-      <div class="relative max-w-[70%] px-3 py-1 rounded-sm mr-4 bg-white text-gray-700 text-sm my-auto">
+      <div class="message relative max-w-[70%] px-3 py-1 rounded-sm mr-4 bg-white text-gray-700 text-sm my-auto">
         <p>{{ message.text }}</p>
         <div class="absolute top-[0px] right-0 transform translate-x-1/2 translate-y-1/2 rotate-45 w-4 h-4 bg-white">
         </div>
       </div>
-      <div class="relative my-auto mx-2 text-xs font-medium text-center">
-        <div class="flex flex-row items-center text-xs">
+      <div class="datetime relative my-auto mx-2 text-xs font-medium text-center">
+        <div>
           <p>{{ message.datetime | date:'shortTime' }}</p>
           <div>
             <span>
-              <img *ngIf="!message.notsent" src="assets/img/sent.svg" class="w-4 h-4" alt="">
-              <img *ngIf="message.notsent" src="assets/img/error.svg" class="w-4 h-4" alt="">
+              <img *ngIf="!message.notsent" src="assets/images/sent.svg" class="w-4 h-4" alt="">
+              <img *ngIf="message.notsent" src="assets/images/error.svg" class="w-4 h-4" alt="">
             </span>
           </div>
           <div>
@@ -42,7 +42,7 @@
     </div>
   </div>
 
-  <div *ngIf="!messages || messages.length === 0" class="relative my-auto mx-2 text-sm font-medium text-center">
+  <div *ngIf="!messages || messages.length === 0" class="preview">
     <p class="font-bold">NOTE:</p>
     <p>Kindly select a user and channel to chat</p>
     <p>You can then send your message.</p>

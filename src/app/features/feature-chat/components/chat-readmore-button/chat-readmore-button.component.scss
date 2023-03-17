@@ -1,3 +1,39 @@
 div {
-  background-color: red;
+  
+  button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #17A2B8;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 17px;
+    text-align: center;
+    transition: 0.3s;
+    cursor: pointer;
+    border-width: 0px;
+    box-sizing: border-box;
+    border-color: rgb(70, 196, 255);
+    box-shadow: none;
+  }
+  
+  button:hover {
+    background-color: rgb(19, 118, 133);
+  }
+  
+  button:active {
+    background-color: rgb(123, 20, 80);
+  }
+  
+  button:focus {
+    outline: 0;
+  }
+
+  svg {
+    width: 2rem;
+    height: 1rem;
+    margin-left: 1rem;
+  }
+
 }

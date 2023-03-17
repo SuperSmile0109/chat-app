@@ -89,7 +89,14 @@ export class ChatComponent implements OnInit {
         : this.messages[this.messages.length - 1].messageId,
     };
     this.getMessages(data);
-  }
+  };
+
+  moveScrollDown(event: any): void {
+    
+  };
+  moveScrollUp(event: any): void {
+    console.log("up")
+  };
 
   getMessages(payload: MessageRequest): void {
     const fetchMore = payload.messageId && payload.old ? true : false;
