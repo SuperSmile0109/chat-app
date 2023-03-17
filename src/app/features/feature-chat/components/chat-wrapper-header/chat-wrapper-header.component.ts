@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+
 import { Channel } from 'src/app/core/models';
 
 @Component({

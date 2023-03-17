@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { ChatWrapperTextareaComponent } from './chat-wrapper-textarea.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import { setFieldValue, findEl } from 'src/app/core/spec-helpers/chat.spec-helper';
 
 describe('ChatWrapperTextareaComponent', () => {

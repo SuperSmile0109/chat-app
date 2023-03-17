@@ -1,5 +1,6 @@
 import { createSelector } from '@ngrx/store';
 import { ChatData } from '.';
+
 import { AppState } from '../root-state';
 
 const getChatState = (state: AppState): ChatData => state.chat;

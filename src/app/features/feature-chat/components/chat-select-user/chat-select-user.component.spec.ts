@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { ChatSelectUserComponent } from './chat-select-user.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import { findEl, setFieldValue } from 'src/app/core/spec-helpers/chat.spec-helper';
 
 describe('ChatSelectUserComponent', () => {

@@ -1,29 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import {
-  Channel,
-  MessageRequest,
-  MessageResponse,
-  PostMessageRequest,
-  User,
-} from 'src/app/core/models';
+
+import { Channel, MessageRequest, MessageResponse, PostMessageRequest, User } from 'src/app/core/models';
+
 import { ChatService } from 'src/app/core/services/chat.service';
-import {
-  ClearMessages,
-  LoadGeneralChats,
-  LoadLGTMChats,
-  LoadTechnologyChats,
-  getGeneralChats,
-  getLGTMChats,
-  getTechnologyChats,
-} from 'src/app/core/store/chat-store';
+import { ClearMessages, LoadGeneralChats, LoadLGTMChats, LoadTechnologyChats, getGeneralChats, getLGTMChats, getTechnologyChats } from 'src/app/core/store/chat-store';
 import { AppState } from 'src/app/core/store/root-state';
 
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
-  styleUrls:["./chat.component.scss"]
+  styleUrls: ["./chat.component.scss"]
 })
+
 export class ChatComponent implements OnInit {
   channel!: Channel;
   user!: User;
@@ -36,9 +25,9 @@ export class ChatComponent implements OnInit {
   constructor(
     private chatService: ChatService,
     private store: Store<AppState>
-  ) {}
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   setSelectedUser(event: any): void {
     this.user = event;
@@ -92,7 +81,7 @@ export class ChatComponent implements OnInit {
   };
 
   moveScrollDown(event: any): void {
-    
+
   };
   moveScrollUp(event: any): void {
     console.log("up")
