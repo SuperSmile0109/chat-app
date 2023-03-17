@@ -1,7 +1,6 @@
 import { DebugElement } from '@angular/core';
 import { ComponentFixture } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { MessagesResponse } from '../models';
 
 export const messages: any = {
   fetchLatestMessages: [
@@ -9,7 +8,7 @@ export const messages: any = {
       messageId: '8765390937907625384',
       text: 'Hi, there!',
       datetime: '2023-03-16T00:10:28.245Z',
-      userId: 'Russell',
+      userId: 'Joyse',
     },
     {
       messageId: '9845380937907670972',
@@ -21,7 +20,7 @@ export const messages: any = {
       messageId: '9824230937098237564',
       text: 'Thank you!',
       datetime: '2023-03-16T00:10:54.926Z',
-      userId: 'Russell',
+      userId: 'Sam',
     },
   ],
 };

@@ -37,7 +37,7 @@ describe('ChatService', () => {
   });
 
   xit('should fetch more messages', () => {
-    const params: MessageRequest = { channelId: "1", messageId: "7441760356450402007", old: true };
+    const params: MessageRequest = { channelId: "1", messageId: "8765390937907625384", old: true };
     service.getLatestMessages(params).subscribe((server_messages) => {
       expect(server_messages.data).toEqual(messages);
     });
