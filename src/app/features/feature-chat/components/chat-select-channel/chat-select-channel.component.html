@@ -1,0 +1,8 @@
+<div class="container">
+  <label>2. Choose your channel</label>
+  <button type="button" *ngFor="let channel of channels" data-testid="channel-button"
+    (click)="getSelectedChannel(channel)"
+    [ngClass]="channel.active ? 'color' : ''">
+    {{ channel.channelValue }} Channel
+  </button>
+</div>

@@ -1,0 +1,35 @@
+<div class="body">
+  <div class="header">
+    <h1 class="title">1 day chat app</h1>
+    <p class="description">All messages will be deleted at every 00:00 UTC.</p>
+  </div>
+  <div class="container">
+    <div class="left-side">
+      <chat-select-user (selectedUser)="setSelectedUser($event)"></chat-select-user>
+      <chat-select-channel (selectedChannel)="setSelectedChannel($event)"></chat-select-channel>
+    </div>
+    <div class="right-side">
+      <div class="wrapper-header">
+        <chat-wrapper-header [channel]="channel"></chat-wrapper-header>
+      </div>
+      <div class="wrapper-messages">
+        <!-- read old messages -->
+        <div *ngIf="messages && messages.length > 0">
+          <chat-readmore-button class="readmore-button" onclick={} [old]="true" (moveScroll)="moveScrollDown($event)" (readMoreMessage)="readMoreMessages($event)"></chat-readmore-button>
+        </div>
+        <!-- message box -->
+        <div>
+          <chat-wrapper-messages [messages]="messages" [user]="user"></chat-wrapper-messages>
+        </div>
+        <!-- read new messages -->
+        <div *ngIf="messages && messages.length > 0">
+          <chat-readmore-button class="readmore-button" onclick={} [old]="false" (moveScroll)="moveScrollUp($event)" (readMoreMessage)="readMoreMessages($event)"></chat-readmore-button>
+        </div>
+        <!-- textarea -->
+        <div>
+          <chat-wrapper-textarea class="chat-wrapper-textarea" (userMessage)="postUserMessage($event)" [chatDetails]="chatDetails"></chat-wrapper-textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

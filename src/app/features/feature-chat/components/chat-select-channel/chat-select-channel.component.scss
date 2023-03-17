@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    margin-bottom: 10px;
+  }
+  .color {
+    background-color: white;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+    font-size: 17px;
+    text-align: center;
+    transition: 0.3s;
+    background-color: #f2f2f2;
+    cursor: pointer;
+    border-width: 0px;
+    box-sizing: border-box;
+    border-color: rgb(70, 196, 255);
+    box-shadow: none;
+  }
+  
+  button:hover {
+    border-left-width: 5px;
+  }
+  
+  button:active {
+    border-color: rgb(123, 20, 80);
+    border-style: solid;
+  }
+  
+  button:focus {
+    outline: 0;
+  }
+}

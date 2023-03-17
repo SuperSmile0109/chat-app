@@ -1,0 +1,8 @@
+<div>
+  <form class="container" [formGroup]="userForm" #userform="ngForm" (change)="getSelectedUser(userform)" data-testid="form">
+    <label>1. Choose your user</label>
+    <select [formControlName]="'userId'" data-testid="user-id">
+      <option *ngFor="let user of users" [value]="user.userId">{{ user.userName }}</option>
+    </select>
+  </form>
+</div>

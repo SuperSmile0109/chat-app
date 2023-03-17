@@ -1,0 +1,12 @@
+<div class="flex flex-0 items-center h-18 py-1">
+  <button type="button" (click)="readMoreMessages(old)" data-testid="more-button">
+    Read More
+    <svg *ngIf="old" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="4" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75" />
+    </svg>
+    <svg *ngIf="!old" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="4" stroke="currentColor"
+      class="w-5 h-4 ml-1">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m0 0l6.75-6.75M12 19.5l-6.75-6.75" />
+    </svg>
+  </button>
+</div>
